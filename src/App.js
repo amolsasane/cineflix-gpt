@@ -2,9 +2,11 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Let's start building NetflixGPT</p>
+    <div>
+      <header>
+        <p className="text-lg text-blue-600 font-bold">
+          Let's start building NetflixGPT
+        </p>
       </header>
     </div>
   );

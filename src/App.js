@@ -4,7 +4,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>Let's start building NetflixGPT</p>
       </header>
     </div>

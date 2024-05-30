@@ -1,1 +1,1 @@
-# NetflixGPT
+# CineflixGPT

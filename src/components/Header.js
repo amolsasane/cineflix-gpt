@@ -1,6 +1,6 @@
 import logo from "../utils/images/logo.png";
 
-const Header = () => {
+const Header = ({ toggle, isSignedUp }) => {
   return (
     <div className="flex flex-between justify-between">
       <img
@@ -8,8 +8,11 @@ const Header = () => {
         src={logo}
         alt="logo"
       />
-      <button className="bg-red-700 contrast-150 rounded-md p-2 text-white font-bold h-full px-4 content-center mt-12 mr-[20rem]">
-        Sign Up
+      <button
+        className="bg-red-700 contrast-150 rounded-md p-2 text-white font-bold h-full px-4 content-center mt-12 mr-[20rem]"
+        onClick={toggle}
+      >
+        {isSignedUp ? "Sign Up" : "Login"}
       </button>
     </div>
   );

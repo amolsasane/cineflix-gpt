@@ -17,12 +17,15 @@ const Signup = ({ toggle }) => {
         type="password"
         placeholder="Password"
       ></input>
-      <button className="bg-red-700 text-white w-full p-4 my-2 rounded-md contrast-150 font-bold">
+      <button className="bg-red-700 hover:contrast-100 text-white w-full p-4 my-2 rounded-md contrast-150 font-bold">
         Sign Up
       </button>
       <p className="text-gray-400 mt-10">
         Already a member?{" "}
-        <span className="text-white cursor-pointer" onClick={toggle}>
+        <span
+          className="text-white hover:underline cursor-pointer"
+          onClick={toggle}
+        >
           Login now!
         </span>
       </p>

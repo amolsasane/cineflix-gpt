@@ -1,6 +1,8 @@
 import React from "react";
 import { checkValidData } from "../utils/validate";
 import { useRef, useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Signup = ({ toggle }) => {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -12,6 +14,23 @@ const Signup = ({ toggle }) => {
     // validate the data entered
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
+    // create user account
+    if (message) return;
+
+    createUserWithEmailAndPassword(
+      auth,
+      email.current.value,
+      password.current.value
+    )
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setErrorMessage(errorMessage);
+      });
   };
 
   return (

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "./Header";
 import Login from "./Login";
 import Signup from "./Signup";
-import Footer from "./Footer";
 
 const Form = () => {
   const [isSignedUp, setIsSignedUp] = useState(true);

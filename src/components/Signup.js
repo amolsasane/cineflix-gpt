@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { checkValidData } from "../utils/validate";
-import { useRef, useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
@@ -46,26 +45,26 @@ const Signup = ({ toggle }) => {
   };
 
   return (
-    <div className="absolute bg-black bg-opacity-70 w-[28%] h-[75%] mx-auto my-[4rem] left-0 right-0 rounded-[1rem] p-14">
-      <h1 className="text-white text-[2rem] font-bold mb-8">Sign Up</h1>
+    <div className="relative bg-black bg-opacity-70 w-[28%] mx-auto my-[4rem] rounded-[1rem] p-14 flex flex-col">
+      <h1 className="text-white text-2xl font-bold mb-8">Sign Up</h1>
       <input
         ref={name}
         className="p-4 my-2 w-full text-white bg-white bg-opacity-20 rounded-md"
         type="text"
         placeholder="Full Name"
-      ></input>
+      />
       <input
         ref={email}
         className="p-4 my-2 w-full text-white bg-white bg-opacity-20 rounded-md"
         type="text"
         placeholder="Email"
-      ></input>
+      />
       <input
         ref={password}
         className="p-4 my-2 w-full text-white bg-white bg-opacity-20 rounded-md"
         type="password"
         placeholder="Password"
-      ></input>
+      />
       <p className="text-red-400 text-xs my-2">{errorMessage}</p>
       <button
         onClick={clickHandler}

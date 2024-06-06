@@ -1,12 +1,18 @@
 import React from "react";
 import { checkValidData } from "../utils/validate";
 import { useRef, useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { addUser } from "../utils/userSlice";
+import { useDispatch } from "react-redux";
 
 const Signup = ({ toggle }) => {
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
 
@@ -25,7 +31,13 @@ const Signup = ({ toggle }) => {
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
-        console.log(user);
+        updateProfile(user, {
+          displayName: name.current.value,
+        }).then(() => {
+          const { uid, email, displayName } = auth.currentUser;
+          dispatch(addUser({ uid: uid, email: email, name: displayName }));
+        });
+        navigate("/browse");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -37,6 +49,7 @@ const Signup = ({ toggle }) => {
     <div className="absolute bg-black bg-opacity-70 w-[28%] h-[75%] mx-auto my-[4rem] left-0 right-0 rounded-[1rem] p-14">
       <h1 className="text-white text-[2rem] font-bold mb-8">Sign Up</h1>
       <input
+        ref={name}
         className="p-4 my-2 w-full text-white bg-white bg-opacity-20 rounded-md"
         type="text"
         placeholder="Full Name"

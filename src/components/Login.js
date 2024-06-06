@@ -3,9 +3,11 @@ import { checkValidData } from "../utils/validate";
 import { useRef, useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ toggle }) => {
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   const email = useRef(null);
   const password = useRef(null);
@@ -24,8 +26,7 @@ const Login = ({ toggle }) => {
     )
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
-        console.log(user);
+        navigate("/browse");
       })
       .catch((error) => {
         const errorMessage = error.message;

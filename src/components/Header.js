@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../utils/images/logo.png";
 import { useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
 
 const Header = ({ toggle, isSignedUp }) => {
   const user = useSelector((store) => store.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSignIn = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        navigate("/");
       })
-      .catch((error) => {
+      .catch(() => {
         // An error happened.
         navigate("/error");
       });
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid: uid, email: email, name: displayName }));
+        navigate("/browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className="flex flex-between justify-between items-center bg-gradient-to-b from-black relative w-full">

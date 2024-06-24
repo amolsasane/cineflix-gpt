@@ -34,7 +34,7 @@ const Login = ({ toggle }) => {
   };
 
   return (
-    <div className="bg-black bg-opacity-70 w-[28%] h-[65%] mx-auto my-[4rem] rounded-[1rem] p-14">
+    <div className="bg-black bg-opacity-70 w-[28%] h-[65%] mx-auto rounded-[1rem] p-14 mt-[4rem]">
       <h1 className="text-white text-2xl font-bold mb-8">Login</h1>
       <input
         ref={email}

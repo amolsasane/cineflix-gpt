@@ -6,7 +6,7 @@ const MovieTrailer = ({ id }) => {
   useMovieTrailer(id);
 
   return (
-    <div className="">
+    <div>
       <iframe
         className="w-screen aspect-video"
         src={

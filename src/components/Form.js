@@ -12,7 +12,7 @@ const Form = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative h-screen">
       <img
         className="h-full w-full absolute brightness-50"
         src={bgImage}

@@ -1,14 +1,20 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-const MovieCarausel = ({ title, movies }) => {
+const MovieCarousel = ({ title, movies }) => {
   return (
     <div>
-      <h1 className="text-white">{title}</h1>
-      <div className="flex overflow-x-scroll">
-        <div className="flex">
-          {movies?.map((movies) => (
-            <MovieCard posterPath={movies.poster_path} />
+      <h1 className="ml-3 text-white font-bold text-xl rounded">{title}</h1>
+      <div className="slider">
+        <div className="slide flex mt-2 mb-14">
+          {movies?.map((movie) => (
+            <MovieCard key={movie.id} posterPath={movie.poster_path} />
+          ))}
+          {movies?.map((movie) => (
+            <MovieCard
+              key={`duplicate-${movie.id}`}
+              posterPath={movie.poster_path}
+            />
           ))}
         </div>
       </div>
@@ -16,4 +22,4 @@ const MovieCarausel = ({ title, movies }) => {
   );
 };
 
-export default MovieCarausel;
+export default MovieCarousel;

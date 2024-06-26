@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Assuming you have Tailwind CSS or similar utility-first CSS framework */
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide {
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
+
+.slide:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

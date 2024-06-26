@@ -50,7 +50,7 @@ const HeaderBrowse = () => {
           Hello, {user?.name}
         </h1>
         <button
-          className="bg-red-700 hover:contrast-100 contrast-150 px-4 pt-1 pb-2 ml-3 mt-1 rounded-md text-white font-bold content-center"
+          className="bg-red-700 hover:contrast-100 contrast-150 text-sm px-4 font-bold pt-1 pb-2 ml-3 mt-1 rounded-md text-white content-center"
           onClick={handleSignIn}
         >
           Logout

@@ -5,10 +5,16 @@ import { useSelector } from "react-redux";
 
 const PrimaryContainer = () => {
   const movielist = useSelector((store) => store.movies?.nowPlayingMovies);
-  if (!movielist) return;
+
+  if (!movielist) {
+    return <div>Loading...</div>; // Add a loading state
+  }
+
+  if (movielist.length === 0) {
+    return <div>No movies available</div>; // Handle empty movie list
+  }
 
   const mainMovie = movielist[0];
-
   const { id, title, overview } = mainMovie;
 
   return (

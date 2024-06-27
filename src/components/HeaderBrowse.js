@@ -38,7 +38,7 @@ const HeaderBrowse = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-transparent flex justify-between items-start bg-gradient-to-b from-black absolute w-full">
+    <div className="h-screen bg-transparent flex justify-between items-start bg-gradient-to-b from-black absolute w-full pt-4">
       <img
         className="w-[10rem] brightness-100 contrast-150 ml-10"
         src={logo}

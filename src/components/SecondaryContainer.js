@@ -7,7 +7,7 @@ const SecondaryContainer = () => {
   console.log(moviesData);
 
   return (
-    <div className="bg-black -mt-[15rem] w-full">
+    <div className="bg-black -mt-[13rem] w-full">
       <MovieCarausel
         title={"Now Playing"}
         movies={moviesData.nowPlayingMovies}

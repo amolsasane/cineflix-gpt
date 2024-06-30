@@ -5,6 +5,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import { toggleGptSearch } from "../utils/gptSlice";
 
 const HeaderBrowse = () => {
   const user = useSelector((store) => store.user);
@@ -37,6 +38,10 @@ const HeaderBrowse = () => {
     return () => unsubscribe();
   }, []);
 
+  const handleGptSearchBtn = () => {
+    dispatch(toggleGptSearch());
+  };
+
   return (
     <div className="h-screen bg-transparent flex justify-between items-start bg-gradient-to-b from-black absolute w-full pt-4">
       <img
@@ -49,6 +54,14 @@ const HeaderBrowse = () => {
         <h1 className="text-white text-10 content-center">
           Hello, {user?.name}
         </h1>
+
+        <button
+          onClick={handleGptSearchBtn}
+          className="bg-white hover:contrast-100 contrast-150 text-sm px-4 font-bold pt-1 pb-2 ml-3 mt-1 rounded-md content-center"
+        >
+          GPT Search
+        </button>
+
         <button
           className="bg-red-700 hover:contrast-100 contrast-150 text-sm px-4 font-bold pt-1 pb-2 ml-3 mt-1 rounded-md text-white content-center"
           onClick={handleSignIn}

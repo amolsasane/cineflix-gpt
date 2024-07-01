@@ -28,3 +28,8 @@
     transform: translateX(-50%);
   }
 }
+
+.default-header {
+  height: 100vh;
+  background: linear-gradient(to bottom, black, transparent);
+}

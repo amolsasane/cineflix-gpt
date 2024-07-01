@@ -7,12 +7,16 @@ import { useSelector } from "react-redux";
 const GptSearch = () => {
   const lang = useSelector((store) => store.lang.selectedLang);
 
+  const handleSumbmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="text-white">
       <h1 className="text-5xl font-bold p-2 m-2">
         {langConstants[lang].gptHeading}
       </h1>
-      <form className="m-2 p-2 flex justify-center">
+      <form className="m-2 p-2 flex justify-center" onSubmit={handleSumbmit}>
         <input
           className="p-4 text-white placeholder-white text-2xl m-1 w-[60%] bg-blue-300 bg-opacity-20 rounded-md border border-2"
           type="text"

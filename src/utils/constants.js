@@ -18,7 +18,7 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "marathi", name: "Marathi" },
   { identifier: "sanskrit", name: "Sanskrit" },
   { identifier: "spanish", name: "Spanish" },
-  { identifier: "germen", name: "Germen" },
+  { identifier: "german", name: "German" },
   { identifier: "french", name: "French" },
   { identifier: "chinese", name: "Chinese" },
   { identifier: "japanese", name: "Japanese" },

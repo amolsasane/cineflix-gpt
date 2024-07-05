@@ -17,7 +17,7 @@ const useUpcomingMovies = () => {
 
   useEffect(() => {
     getUpcomingMovies();
-  }, []);
+  }, [dispatch, getUpcomingMovies]);
 };
 
 export default useUpcomingMovies;

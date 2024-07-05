@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import logo from "../utils/images/logo.png";
 import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 
 const Header = ({ toggle, isSignedUp }) => {
-  const user = useSelector((store) => store.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -24,7 +23,7 @@ const Header = ({ toggle, isSignedUp }) => {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [dispatch, navigate]);
 
   return (
     <div className="flex flex-between justify-between items-center bg-gradient-to-b from-black relative w-full">

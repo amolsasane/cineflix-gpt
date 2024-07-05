@@ -72,7 +72,7 @@ const HeaderBrowse = () => {
               onClick={handleGptSearchBtn}
               className="bg-white contrast-150 text-sm px-4 font-bold pt-1 pb-2 rounded-md content-center"
             >
-              GPT Search
+              AI Search
             </button>
 
             <button

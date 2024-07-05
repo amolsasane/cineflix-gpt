@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import langConstants from "../utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
-import openai from "../utils/openai";
 import { showError } from "../utils/gptSlice";
 
 const GptSearch = () => {
@@ -12,6 +11,10 @@ const GptSearch = () => {
   const searchText = useRef(null);
   const dispatch = useDispatch();
 
+  const { GoogleGenerativeAI } = require("@google/generative-ai");
+  const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     gptSearchClickHandler();
@@ -19,17 +22,16 @@ const GptSearch = () => {
 
   const gptSearchClickHandler = async () => {
     try {
-      const gptQuery =
+      const promptQuery =
         "Act like a movie suggestion system and show results for the query: " +
         searchText.current.value +
         ". Give 5 movies, comma separated like the example result given ahead. Example Result: 3 Idiots, Avenger, Hulk, Raabta, Kabir Singh.";
 
-      const gptResults = await openai.chat.completions.create({
-        messages: [{ role: "user", content: gptQuery }],
-        model: "gpt-3.5-turbo",
-      });
-
-      console.log(gptResults.choices);
+      const prompt = promptQuery;
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      console.log(text);
     } catch (error) {
       console.error("Error fetching GPT results", error);
       dispatch(showError(error.message));

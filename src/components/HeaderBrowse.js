@@ -5,7 +5,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { toggleGptSearch } from "../utils/gptSlice";
+import { removeGptMovies, toggleGptSearch } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLang } from "../utils/langSlice";
 
@@ -43,6 +43,7 @@ const HeaderBrowse = () => {
 
   const handleGptSearchBtn = () => {
     dispatch(toggleGptSearch());
+    dispatch(removeGptMovies());
   };
 
   const langChangeHandler = (e) => {
@@ -87,7 +88,7 @@ const HeaderBrowse = () => {
         {showGpt && (
           <>
             <select
-              className="bg-gray-900 rounded-md text-white p-2"
+              className="bg-gray-900 rounded-md text-white p-2 border border-gray-500"
               onChange={langChangeHandler}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (

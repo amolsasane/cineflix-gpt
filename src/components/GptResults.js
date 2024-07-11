@@ -7,7 +7,7 @@ const GptResults = () => {
   if (!movieNames) return null;
 
   return (
-    <div className="ml-12 text-white">
+    <div className="pl-12 text-white bg-black">
       {movieNames.map((name, index) => (
         <div key={index} className="overflow-hidden">
           <h1 className="text-white font-bold text-2xl rounded m-2">{name}</h1>

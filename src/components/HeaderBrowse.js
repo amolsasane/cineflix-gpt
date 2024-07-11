@@ -8,6 +8,9 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { removeGptMovies, toggleGptSearch } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLang } from "../utils/langSlice";
+import aiLogo from "../utils/images/gemini-icon.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderBrowse = () => {
   const user = useSelector((store) => store.user);
@@ -21,7 +24,6 @@ const HeaderBrowse = () => {
         // Sign-out successful.
       })
       .catch(() => {
-        // An error happened.
         navigate("/error");
       });
   };
@@ -52,7 +54,7 @@ const HeaderBrowse = () => {
 
   return (
     <div
-      className={`flex justify-between items-start absolute w-full pt-4 ${
+      className={`flex justify-between items-start absolute z-10 w-full pt-4 ${
         showGpt ? "gpt-header" : "default-header"
       }`}
     >
@@ -62,22 +64,22 @@ const HeaderBrowse = () => {
         alt="logo"
       />
 
-      <div className="flex items-center mr-10 mt-4 space-x-3">
+      <div className="flex items-center mr-10 mt-4 space-x-3 pt-2 pr-4">
         {!showGpt && (
           <>
-            <h1 className="text-white text-10 content-center">
-              Hello, {user?.name}
+            <h1 className="text-white text-sm px-4">
+              Hello, {user?.name?.split(" ")?.filter((word) => word)[0]}
             </h1>
 
             <button
               onClick={handleGptSearchBtn}
-              className="bg-white contrast-150 text-sm px-4 font-bold pt-1 pb-2 rounded-md content-center"
+              className="text-sm mx-6 p-2 text-white hover:border hover:rounded-lg"
             >
-              AI Search
+              <img className="w-6 inline-flex" src={aiLogo} /> AI Search
             </button>
 
             <button
-              className="bg-red-700 hover:contrast-100 contrast-150 text-sm px-4 font-bold pt-1 pb-2 rounded-md text-white content-center"
+              className="text-sm  hover:border hover:rounded-lg py-2 px-4  text-white"
               onClick={handleSignOut}
             >
               Logout
@@ -88,11 +90,15 @@ const HeaderBrowse = () => {
         {showGpt && (
           <>
             <select
-              className="bg-gray-900 rounded-md text-white p-2 border border-gray-500"
+              className="text-white p-2 bg-transparent hover:font-bold"
               onChange={langChangeHandler}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
-                <option key={lang.identifier} value={lang.identifier}>
+                <option
+                  key={lang.identifier}
+                  value={lang.identifier}
+                  className="text-black"
+                >
                   {lang.name}
                 </option>
               ))}
@@ -100,9 +106,9 @@ const HeaderBrowse = () => {
 
             <button
               onClick={handleGptSearchBtn}
-              className="bg-white contrast-150 px-4 font-bold pt-1 pb-2 rounded-md content-center ml-auto"
+              className="text-white text-lg hover:text-2xl px-10 pt-1 pb-2"
             >
-              Home
+              <FontAwesomeIcon icon={faHouse} />
             </button>
           </>
         )}

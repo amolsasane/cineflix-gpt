@@ -1,21 +1,31 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import langConstants from "../utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
 import { addGptMovies, showError } from "../utils/gptSlice";
 import { API_OPTIONS } from "../utils/constants";
+import { bgImage } from "../utils/constants";
 
 const GptSearch = () => {
   const lang = useSelector((store) => store.lang.selectedLang);
   const errorMessage = useSelector((store) => store.gpt.error);
-  const showErrorMessage = useSelector((store) => store.gpt.movieResults);
+  const movieResults = useSelector((store) => store.gpt.movieResults); // renamed to movieResults
   const searchText = useRef(null);
+  const resultsRef = useRef(null); // Ref for results section
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+  const [hasResults, setHasResults] = useState(false); // State to track if results are available
 
   const { GoogleGenerativeAI } = require("@google/generative-ai");
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+  useEffect(() => {
+    if (hasResults && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [hasResults]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +46,8 @@ const GptSearch = () => {
 
   const gptSearchClickHandler = async () => {
     try {
+      setLoading(true); // Start loading
+      setHasResults(false);
       const promptQuery =
         "Act like a movie suggestion system and show results for the query: " +
         searchText.current.value +
@@ -55,14 +67,22 @@ const GptSearch = () => {
       dispatch(
         addGptMovies({ movieNames: gptResult, movieResults: tmdbResult })
       );
+      setHasResults(true);
     } catch (error) {
       console.error("Error fetching GPT results", error);
       dispatch(showError(error.message));
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
   return (
-    <div className="text-white pt-[10rem]">
+    <div
+      className="text-white pt-[17rem] min-h-screen bg-cover relative"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${bgImage})`,
+      }}
+    >
       <h1 className="text-5xl font-bold p-2 m-2 text-center">
         {langConstants[lang].gptHeading}
       </h1>
@@ -79,17 +99,28 @@ const GptSearch = () => {
         <button
           type="submit"
           className="bg-red-700 hover:contrast-100 contrast-150 font-bold p-4 m-1 text-2xl rounded-md text-white content-center"
+          disabled={loading} // Disable the button when loading
         >
           {langConstants[lang].search} <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </form>
-      {!showErrorMessage && errorMessage && (
+
+      {loading && (
+        <div className="flex justify-center mt-4">
+          <div className="loader font-bold text-2xl"></div>
+          Loading...
+        </div>
+      )}
+
+      {!movieResults && errorMessage && (
         <div className="flex justify-center">
           <h1 className="text-white p-2 m-2 w-fit text-center font-bold items-center text-xl">
             {langConstants[lang].gptError}
           </h1>
         </div>
       )}
+
+      <div ref={resultsRef}></div>
     </div>
   );
 };

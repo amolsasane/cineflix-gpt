@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addGptMovies, showError } from "../utils/gptSlice";
 import { API_OPTIONS } from "../utils/constants";
 import { bgImage } from "../utils/constants";
+import Loader from "./Loader";
 
 const GptSearch = () => {
   const lang = useSelector((store) => store.lang.selectedLang);
@@ -107,8 +108,7 @@ const GptSearch = () => {
 
       {loading && (
         <div className="flex justify-center mt-4">
-          <div className="loader font-bold text-2xl"></div>
-          Loading...
+          <Loader />
         </div>
       )}
 

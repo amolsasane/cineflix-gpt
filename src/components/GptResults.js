@@ -13,7 +13,11 @@ const GptResults = () => {
           <h1 className="text-white font-bold text-2xl rounded m-2">{name}</h1>
           <div className="flex w-fit pb-10">
             {movieResults[index]?.slice(0, 8).map((movie) => (
-              <MovieCard key={movie.id} posterPath={movie.poster_path} />
+              <MovieCard
+                key={movie.id}
+                posterPath={movie.poster_path}
+                id={movie.id}
+              />
             ))}
           </div>
         </div>

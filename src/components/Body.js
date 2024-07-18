@@ -1,8 +1,8 @@
 import React from "react";
 import Form from "./Form";
 import Browse from "./Browse";
-import Error from "./Error";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import PlayMovie from "./PlayMovie";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -15,8 +15,8 @@ const Body = () => {
       element: <Browse />,
     },
     {
-      path: "/error",
-      element: <Error />,
+      path: "/browse/watch/:id",
+      element: <PlayMovie />,
     },
   ]);
 

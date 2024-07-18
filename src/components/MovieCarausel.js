@@ -2,7 +2,6 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 const MovieCarousel = ({ title, movies }) => {
-  console.log(movies);
   return (
     <div>
       <h1 className="ml-12 text-white font-bold text-2xl rounded">{title}</h1>

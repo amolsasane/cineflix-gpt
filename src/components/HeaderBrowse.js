@@ -9,8 +9,6 @@ import { removeGptMovies, toggleGptSearch } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLang } from "../utils/langSlice";
 import aiLogo from "../utils/images/gemini-icon.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderBrowse = () => {
   const user = useSelector((store) => store.user);
@@ -19,13 +17,9 @@ const HeaderBrowse = () => {
   const dispatch = useDispatch();
 
   const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch(() => {
-        navigate("/error");
-      });
+    signOut(auth).then(() => {
+      // Sign-out successful.
+    });
   };
 
   useEffect(() => {
@@ -75,7 +69,8 @@ const HeaderBrowse = () => {
               onClick={handleGptSearchBtn}
               className="text-sm mx-6 p-2 text-white hover:border hover:rounded-lg"
             >
-              <img className="w-6 inline-flex" src={aiLogo} /> AI Search
+              <img className="w-6 inline-flex" src={aiLogo} alt="ai" /> AI
+              Search
             </button>
 
             <button
@@ -90,7 +85,7 @@ const HeaderBrowse = () => {
         {showGpt && (
           <>
             <select
-              className="text-white p-2 bg-transparent hover:font-bold"
+              className="text-white p-2 bg-transparent hover:border hover:rounded-lg mr-10"
               onChange={langChangeHandler}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -106,9 +101,9 @@ const HeaderBrowse = () => {
 
             <button
               onClick={handleGptSearchBtn}
-              className="text-white text-lg hover:text-2xl px-10 pt-1 pb-2"
+              className="text-white text-md hover:border hover:rounded-lg pt-1 pb-1 px-3"
             >
-              <FontAwesomeIcon icon={faHouse} />
+              Home
             </button>
           </>
         )}

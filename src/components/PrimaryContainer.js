@@ -19,7 +19,7 @@ const PrimaryContainer = () => {
 
   return (
     <div>
-      <MovieInfo title={title} overview={overview} />
+      <MovieInfo title={title} overview={overview} id={id} />
       <MovieTrailer id={id} />
     </div>
   );

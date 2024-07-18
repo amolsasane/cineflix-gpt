@@ -59,11 +59,9 @@ const GptSearch = () => {
       const response = result.response;
       const text = response.text();
       const gptResult = text.split(",");
-      console.log(text);
 
       const promiseArray = gptResult.map((movie) => getMoviesTMDB(movie));
       const tmdbResult = await Promise.all(promiseArray);
-      console.log(tmdbResult);
 
       dispatch(
         addGptMovies({ movieNames: gptResult, movieResults: tmdbResult })

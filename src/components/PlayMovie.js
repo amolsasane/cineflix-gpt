@@ -31,7 +31,7 @@ const PlayMovie = () => {
     <div>
       <HeaderPlay />
       <iframe
-        className="w-full h-[100vh]"
+        className="w-screen h-screen"
         src={"https://www.youtube.com/embed/" + movieKey + "?rel=0&autoplay=1"}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"

@@ -1,13 +1,11 @@
-import HeaderBrowse from "./HeaderBrowse";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
-import PrimaryContainer from "./PrimaryContainer";
-import SecondaryContainer from "./SecondaryContainer";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRateMovies from "../hooks/useTopRatedMovies";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import HeaderBrowse from "./HeaderBrowse";
 import Gpt from "./Gpt";
+import Home from "./Home";
 import { useSelector } from "react-redux";
-import Footer from "./Footer";
 
 const Browse = () => {
   const showGpt = useSelector((store) => store.gpt.showGptSearch);
@@ -20,15 +18,7 @@ const Browse = () => {
   return (
     <div>
       <HeaderBrowse />
-      {showGpt ? (
-        <Gpt />
-      ) : (
-        <>
-          <PrimaryContainer />
-          <SecondaryContainer />
-        </>
-      )}
-      <Footer />
+      {showGpt ? <Gpt /> : <Home />}
     </div>
   );
 };

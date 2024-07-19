@@ -18,7 +18,6 @@ const Header = ({ toggle, isSignedUp }) => {
         navigate("/browse");
       } else {
         dispatch(removeUser());
-        navigate("/");
       }
     });
 

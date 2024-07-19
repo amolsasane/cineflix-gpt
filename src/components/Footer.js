@@ -25,6 +25,7 @@ const Footer = () => {
                     href="https://amolsasane.netlify.app/"
                     className="block mt-2 text-sm hover:underline hover:font-bold"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     AMOL SASANE
                   </a>
@@ -41,6 +42,7 @@ const Footer = () => {
                   className="mx-2 hover:opacity-50"
                   aria-label="LinkedIn"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
@@ -50,6 +52,7 @@ const Footer = () => {
                   className="mx-2 hover:opacity-50"
                   aria-label="Github"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
@@ -59,6 +62,7 @@ const Footer = () => {
                   className="mx-2 hover:opacity-50"
                   aria-label="DEV"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faDev} />
                 </a>
@@ -68,6 +72,7 @@ const Footer = () => {
                   className="mx-2 hover:opacity-50"
                   aria-label="Twitter"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faXTwitter} />
                 </a>
@@ -83,6 +88,7 @@ const Footer = () => {
                   href="https://amolsasane.netlify.app/"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Portfolio
                 </a>
@@ -90,6 +96,7 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/amolsasane/overlay/1716922022455/single-media-viewer/?profileId=ACoAAC5CvzcB1oXHxIlPZb02JT9UDziLWKqvFug"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Resume
                 </a>
@@ -97,6 +104,7 @@ const Footer = () => {
                   href="https://amolsasane.netlify.app/about"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   About Me
                 </a>
@@ -108,6 +116,7 @@ const Footer = () => {
                   href="https://foodexpresss.netlify.app/"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Food Express
                 </a>
@@ -115,6 +124,7 @@ const Footer = () => {
                   href="https://bookwiseadvisor.netlify.app/"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Book Adviser
                 </a>
@@ -122,6 +132,7 @@ const Footer = () => {
                   href="https://emojipediainterpreter.netlify.app/"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Emojipedia
                 </a>
@@ -133,6 +144,7 @@ const Footer = () => {
                   href="https://dev.to/amolsasane_/understanding-css-box-model-1ap"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   CSS Box Model
                 </a>
@@ -140,6 +152,7 @@ const Footer = () => {
                   href="https://dev.to/amolsasane_/color-psychology-in-web-design-4cmf"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Color Phychology
                 </a>
@@ -168,6 +181,7 @@ const Footer = () => {
                 href="https://amolsasane.netlify.app/"
                 className="block mt-2 text-sm hover:underline hover:font-bold"
                 target="_blank"
+                rel="noreferrer"
               >
                 Amol Sasane
               </a>

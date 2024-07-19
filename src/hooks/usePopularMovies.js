@@ -18,7 +18,7 @@ const usePopularMovies = () => {
     };
 
     !popularMovies && getPopularMovies();
-  }, [dispatch]);
+  }, [dispatch, popularMovies]);
 };
 
 export default usePopularMovies;

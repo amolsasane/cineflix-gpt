@@ -22,7 +22,7 @@ const useMovieTrailer = (id) => {
     };
 
     !movieTrailer && getMovieVideos();
-  }, [dispatch, id]);
+  }, [dispatch, id, movieTrailer]);
 };
 
 export default useMovieTrailer;

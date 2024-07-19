@@ -18,7 +18,7 @@ const useTopRateMovies = () => {
     };
 
     !topRatedMovies && getTopRatedMovies();
-  }, [dispatch]);
+  }, [dispatch, topRatedMovies]);
 };
 
 export default useTopRateMovies;

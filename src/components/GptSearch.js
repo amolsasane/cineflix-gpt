@@ -77,12 +77,12 @@ const GptSearch = () => {
 
   return (
     <div
-      className="text-white pt-[17rem] min-h-screen bg-cover relative"
+      className="text-white pt-[15rem] min-h-screen bg-cover relative"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${bgImage})`,
       }}
     >
-      <h1 className="text-5xl font-bold p-2 m-2 text-center">
+      <h1 className="text-6xl font-bold mb-8 px-4 text-center">
         {langConstants[lang].gptHeading}
       </h1>
       <form

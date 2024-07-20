@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import download from "../utils/images/download.gif";
-import airobo from "../utils/images/airobo.png";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 
@@ -50,7 +49,7 @@ const LandingPage = () => {
             Unlimited movies, TV shows and more
           </h1>
           <h1 className="text-white text-2xl">
-            Ready to start?, hit the button below!
+            Ready to explore?, hit the button below!
           </h1>
           <button
             onClick={handleScroll}
@@ -180,12 +179,16 @@ const LandingPage = () => {
       </section>
       <div className="h-2 bg-zinc-800"></div>
       <section className="bg-black h-[30rem] flex">
-        <div className="ml-40 w-1/3">
-          <img src={airobo} alt="airobo" className="w-[28rem] mt-10" />
+        <div className="ml-32 w-1/2">
+          <img
+            src="https://ezk8caoodod.exactdn.com/wp-content/uploads/2023/03/search-engine.png?strip=all&lossy=1&ssl=1"
+            alt="ai-image"
+            className="w-auto mt-20"
+          />
         </div>
-        <div className=" flex-col justify-start content-center relative w-[45%]">
+        <div className=" flex-col justify-start content-center relative w-auto mx-16">
           <h1 className="font-bold text-5xl text-white mb-4">
-            AI at your assistance
+            AI for your assistance
           </h1>
           <h1 className="text-2xl text-white">
             Ask anything, and let AI be your ultimate movie Guru, guiding you

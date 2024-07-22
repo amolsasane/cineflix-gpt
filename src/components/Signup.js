@@ -45,7 +45,7 @@ const Signup = ({ toggle }) => {
   };
 
   return (
-    <div className="relative bg-black bg-opacity-70 w-[28%] mx-auto mt-[4rem] rounded-[1rem] p-14 flex flex-col">
+    <div className="bg-black bg-opacity-70 w-full max-w-md h-auto mx-auto rounded-lg p-10 mt-32 lg:mt-16 sm:w-3/4 md:w-1/2 lg:w-1/2 xl:w-1/2">
       <h1 className="text-white text-2xl font-bold mb-8">Sign Up</h1>
       <input
         ref={name}

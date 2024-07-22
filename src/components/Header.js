@@ -25,15 +25,15 @@ const Header = ({ toggle, isSignedUp }) => {
   }, [dispatch, navigate]);
 
   return (
-    <div className="flex flex-between justify-between items-center bg-gradient-to-b from-black relative w-full">
+    <div className="flex justify-between items-center bg-gradient-to-b from-black relative w-full px-4 sm:px-8 md:px-16 lg:px-32">
       <img
-        className="w-[15rem] brightness-100 contrast-150 ml-[10rem]"
+        className="w-[10rem] sm:w-[12rem] md:w-[15rem] brightness-100 contrast-150"
         src={logo}
         alt="logo"
       />
 
       <button
-        className="bg-red-700 hover:contrast-100 contrast-150 px-4 py-2 rounded-md mt-10 text-white font-bold h-full content-center mr-[20rem]"
+        className="bg-red-700 hover:contrast-100 contrast-150 px-4 py-2 rounded-md text-white font-bold"
         onClick={toggle}
       >
         {isSignedUp ? "Sign Up" : "Login"}

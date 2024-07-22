@@ -10,15 +10,19 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-400">
-      <div className="container px-7 mx-auto py-9">
-        <hr className="h-px my-6 bg-zinc-600 border-none" />
-        <div className="lg:flex">
-          <div className="w-full -mx-6 lg:w-2/5">
-            <div className="pl-20 mb-4">
-              <img className="w-[10rem]" src={logoImg} alt="logoImg" />
+    <footer className="bg-black text-gray-400 py-9">
+      <div className="lg:px-10">
+        <hr className="h-px my-6 lg:mx-auto bg-zinc-600 border-none" />
+        <div className="flex flex-wrap lg:flex-nowrap">
+          <div className="w-full lg:w-2/5 lg:pr-6 mb-6 lg:mb-0 text-center lg:text-left">
+            <div className="pl-4 lg:pl-10">
+              <img
+                className="w-[10rem] mx-auto lg:mx-0"
+                src={logoImg}
+                alt="logoImg"
+              />
 
-              <h1 className="max-w-sm text-white">
+              <h1 className="text-white">
                 DEVELOPED BY{" "}
                 <span className="inline-flex">
                   <a
@@ -31,15 +35,15 @@ const Footer = () => {
                   </a>
                 </span>
               </h1>
-              <h1 className="max-w-sm mt-2 text-gray-400">
+              <p className="mt-2 text-sm text-gray-400">
                 Connect with me and find my corner of web development. Find me
                 below!
-              </h1>
+              </p>
 
-              <div className="flex mt-3 -mx-2 text-white text-3xl">
+              <div className="flex justify-center lg:justify-start mt-3 -mx-2 text-white text-2xl">
                 <a
                   href="https://www.linkedin.com/in/amolsasane"
-                  className="mx-2 hover:opacity-50"
+                  className="mx-2 hover:opacity-75"
                   aria-label="LinkedIn"
                   target="_blank"
                   rel="noreferrer"
@@ -49,7 +53,7 @@ const Footer = () => {
 
                 <a
                   href="https://github.com/amolsasane"
-                  className="mx-2 hover:opacity-50"
+                  className="mx-2 hover:opacity-75"
                   aria-label="Github"
                   target="_blank"
                   rel="noreferrer"
@@ -59,7 +63,7 @@ const Footer = () => {
 
                 <a
                   href="https://dev.to/amolsasane_"
-                  className="mx-2 hover:opacity-50"
+                  className="mx-2 hover:opacity-75"
                   aria-label="DEV"
                   target="_blank"
                   rel="noreferrer"
@@ -69,7 +73,7 @@ const Footer = () => {
 
                 <a
                   href="https://twitter.com/amolsasane_"
-                  className="mx-2 hover:opacity-50"
+                  className="mx-2 hover:opacity-75"
                   aria-label="Twitter"
                   target="_blank"
                   rel="noreferrer"
@@ -80,8 +84,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="mt-6 lg:mt-0 lg:flex-1">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-[2rem]">
+          <div className="w-full lg:flex-1 lg:pt-5">
+            <div className="grid grid-cols-1 gap-6 text-center sm:text-left sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-8 lg:mt-0">
               <div>
                 <h3 className="text-white font-bold uppercase">About</h3>
                 <a
@@ -154,7 +158,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Color Phychology
+                  Color Psychology
                 </a>
               </div>
 
@@ -174,12 +178,12 @@ const Footer = () => {
         <hr className="h-px my-6 bg-zinc-600 border-none" />
 
         <div>
-          <p className="text-center text-white">
+          <p className="text-center text-white text-sm lg:text-base">
             © CineflixGPT 2024 - All rights reserved |{" "}
             <span className="inline-flex">
               <a
                 href="https://amolsasane.netlify.app/"
-                className="block mt-2 text-sm hover:underline hover:font-bold"
+                className="block mt-2 hover:underline hover:font-bold"
                 target="_blank"
                 rel="noreferrer"
               >

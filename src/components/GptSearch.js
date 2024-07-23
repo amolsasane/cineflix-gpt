@@ -82,22 +82,22 @@ const GptSearch = () => {
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${bgImage})`,
       }}
     >
-      <h1 className="text-6xl font-bold mb-8 px-4 text-center">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-8 px-4 text-center">
         {langConstants[lang].gptHeading}
       </h1>
       <form
-        className="m-2 p-2 flex justify-center mb-[5rem]"
+        className="m-1 lg:m-2 p-1 lg:p-2 flex justify-center mb-[2rem] lg:mb-[5rem]"
         onSubmit={handleSubmit}
       >
         <input
           ref={searchText}
-          className="p-4 text-white placeholder-white text-2xl m-1 w-[30%] bg-blue-300 bg-opacity-20 rounded-md border-2"
+          className="p-4 text-white placeholder-white text-md sm:text-md md:text-lg lg:text-2xl m-1 w-[65%] sm:w-[50%] md:w-[50%] lg:w-[45%] bg-blue-300 bg-opacity-20 rounded-md border-2"
           type="text"
           placeholder={langConstants[lang].gptSearchPlaceholder}
         />
         <button
           type="submit"
-          className="bg-red-700 hover:contrast-100 contrast-150 font-bold p-4 m-1 text-2xl rounded-md text-white content-center"
+          className="bg-red-700 hover:contrast-100 contrast-150 font-bold p-4 m-1 text-lg lg:text-2xl rounded-md text-white content-center"
           disabled={loading} // Disable the button when loading
         >
           {langConstants[lang].search} <FontAwesomeIcon icon={faChevronRight} />
@@ -112,7 +112,7 @@ const GptSearch = () => {
 
       {!movieResults && errorMessage && (
         <div className="flex justify-center">
-          <h1 className="text-white p-2 m-2 w-fit text-center font-bold items-center text-xl">
+          <h1 className="text-white p-2 m-2 w-fit text-center font-bold items-center text-md lg:text-xl">
             {langConstants[lang].gptError}
           </h1>
         </div>

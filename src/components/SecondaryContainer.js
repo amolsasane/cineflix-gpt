@@ -6,7 +6,7 @@ const SecondaryContainer = () => {
   const moviesData = useSelector((store) => store.movies);
 
   return (
-    <div className="bg-black -mt-[13rem] w-full">
+    <div className="bg-black pt-5] lg:pt-0 lg:-mt-[13rem] w-full">
       <MovieCarausel
         title={"Now Playing"}
         movies={moviesData.nowPlayingMovies}

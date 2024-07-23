@@ -27,9 +27,11 @@
   }
 }
 
-.default-header {
-  height: 100vh;
-  background: linear-gradient(to bottom, black, transparent);
+@media (min-width: 1024px) {
+  .default-header {
+    height: 100vh;
+    background: linear-gradient(to bottom, black, transparent);
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

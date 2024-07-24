@@ -25,7 +25,7 @@ const LandingPage = () => {
   return (
     <div>
       <div
-        className="text-white min-h-[65vh] lg:min-h-[90vh] bg-cover relative z-10"
+        className="text-white h-[40rem] lg:min-h-[30rem] bg-cover relative z-10"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${bgImage})`,
         }}

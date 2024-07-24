@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import { checkValidData } from "../utils/validate";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
@@ -83,6 +84,11 @@ const Signup = ({ toggle }) => {
       </p>
     </div>
   );
+};
+
+// Define prop types for the Signup component
+Signup.propTypes = {
+  toggle: PropTypes.func.isRequired,
 };
 
 export default Signup;

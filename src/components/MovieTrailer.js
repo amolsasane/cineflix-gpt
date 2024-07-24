@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import useMovieTrailer from "../hooks/useMovieTrailer";
 
@@ -20,6 +22,10 @@ const MovieTrailer = ({ id }) => {
       ></iframe>
     </div>
   );
+};
+
+MovieTrailer.propTypes = {
+  id: PropTypes.number.isRequired, // Adjust type according to your use case
 };
 
 export default MovieTrailer;

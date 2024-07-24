@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "firebase": "^10.12.2",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-flaticons": "^1.1.5",
@@ -27,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/"
   },
   "eslintConfig": {
     "extends": [
@@ -49,8 +51,14 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@eslint/js": "^9.7.0",
     "@reduxjs/toolkit": "^2.2.5",
     "babel-preset-react-app": "^10.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.8.0",
     "react-router-dom": "^6.23.1",
     "tailwindcss": "^3.4.3"
   }

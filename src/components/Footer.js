@@ -19,7 +19,7 @@ const Footer = () => {
               <img
                 className="w-[10rem] mx-auto lg:mx-0"
                 src={logoImg}
-                alt="logoImg"
+                alt="logo"
               />
 
               <h1 className="text-white">

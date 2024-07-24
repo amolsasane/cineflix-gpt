@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import PropTypes from "prop-types";
 import { checkValidData } from "../utils/validate";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
@@ -21,7 +22,7 @@ const Login = ({ toggle }) => {
       email.current.value,
       password.current.value
     )
-      .then((userCredential) => {
+      .then(() => {
         navigate("/browse");
       })
       .catch((error) => {
@@ -38,7 +39,7 @@ const Login = ({ toggle }) => {
         <input
           ref={email}
           className="p-3 sm:p-4 text-white my-2 w-full bg-white bg-opacity-20 rounded-md"
-          type="text"
+          type="email"
           placeholder="Email"
         />
         <input
@@ -66,6 +67,10 @@ const Login = ({ toggle }) => {
       </div>
     </div>
   );
+};
+
+Login.propTypes = {
+  toggle: PropTypes.func.isRequired,
 };
 
 export default Login;

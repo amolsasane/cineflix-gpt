@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import logo from "../utils/images/logo.png";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
@@ -40,6 +41,11 @@ const Header = ({ toggle, isSignedUp }) => {
       </button>
     </div>
   );
+};
+
+Header.propTypes = {
+  toggle: PropTypes.func.isRequired,
+  isSignedUp: PropTypes.bool.isRequired,
 };
 
 export default Header;

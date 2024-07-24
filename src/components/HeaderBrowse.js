@@ -92,7 +92,7 @@ const HeaderBrowse = () => {
                 <option
                   key={lang.identifier}
                   value={lang.identifier}
-                  className="text-black text-xs lg:text-md"
+                  className="text-black text-xs lg:text-[1rem]"
                 >
                   {lang.name}
                 </option>

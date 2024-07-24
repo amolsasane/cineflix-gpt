@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import MovieCard from "./MovieCard";
 
 const MovieCarousel = ({ title, movies }) => {
@@ -27,6 +28,17 @@ const MovieCarousel = ({ title, movies }) => {
       </div>
     </div>
   );
+};
+
+// Define PropTypes
+MovieCarousel.propTypes = {
+  title: PropTypes.string.isRequired,
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      poster_path: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default MovieCarousel;

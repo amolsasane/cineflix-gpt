@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -38,6 +39,13 @@ const MovieInfo = ({ title, overview, id }) => {
       </button>
     </div>
   );
+};
+
+// Define PropTypes for MovieInfo component
+MovieInfo.propTypes = {
+  title: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default MovieInfo;

@@ -83,7 +83,7 @@ const LandingPage = () => {
         <div className="flex lg:justify-normal justify-center lg:w-1/2">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
-            alt="tv-png"
+            alt="tv"
             className="absolute lg:w-[40rem] w-[30rem]"
           />
           <video
@@ -201,7 +201,7 @@ const LandingPage = () => {
         <div className="flex justify-center w-[1/2] lg:ml-[5rem] lg:mt-[2rem]">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
-            alt="tv-png"
+            alt="tv"
             className="absolute w-[35rem]"
           />
           <video
@@ -225,7 +225,7 @@ const LandingPage = () => {
         <div className="hidden lg:inline-block flex lg:justify-normal justify-center lg:w-1/2 mb-2 lg:mt-[3rem] w-[30rem] lg:ml-20 lg:pr-10">
           <img
             src="https://ezk8caoodod.exactdn.com/wp-content/uploads/2023/03/search-engine.png?strip=all&lossy=1&ssl=1"
-            alt="ai-image"
+            alt="ai"
             className=""
           />
         </div>
@@ -249,7 +249,7 @@ const LandingPage = () => {
         <div className="lg:hidden flex lg:justify-normal justify-center lg:w-1/2 mb-2">
           <img
             src="https://ezk8caoodod.exactdn.com/wp-content/uploads/2023/03/search-engine.png?strip=all&lossy=1&ssl=1"
-            alt="ai-image"
+            alt="ai"
             className="lg:mt-[3rem] w-[25rem] lg:w-[30rem]"
           />
         </div>

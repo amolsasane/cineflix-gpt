@@ -4,22 +4,23 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import langConstants from "../utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
 import { addGptMovies, showError } from "../utils/gptSlice";
-import { API_OPTIONS } from "../utils/constants";
-import { bgImage } from "../utils/constants";
+import { API_OPTIONS, bgImage } from "../utils/constants";
 import Loader from "./Loader";
+import { GoogleGenerativeAI } from "@google/generative-ai"; // Use ES6 import
 
 const GptSearch = () => {
   const lang = useSelector((store) => store.lang.selectedLang);
   const errorMessage = useSelector((store) => store.gpt.error);
-  const movieResults = useSelector((store) => store.gpt.movieResults); // renamed to movieResults
+  const movieResults = useSelector((store) => store.gpt.movieResults);
   const searchText = useRef(null);
-  const resultsRef = useRef(null); // Ref for results section
+  const resultsRef = useRef(null);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
-  const [hasResults, setHasResults] = useState(false); // State to track if results are available
+  const [hasResults, setHasResults] = useState(false);
 
-  const { GoogleGenerativeAI } = require("@google/generative-ai");
-  const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
+  // eslint-disable-next-line no-undef
+  const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
+  const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   useEffect(() => {

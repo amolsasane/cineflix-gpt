@@ -33,7 +33,7 @@ const Login = ({ toggle }) => {
   return (
     <div className="flex items-center justify-center">
       <div className="bg-black bg-opacity-70 w-full max-w-md h-auto mx-auto rounded-lg p-10 mt-32 lg:mt-16 sm:w-3/4 md:w-1/2 lg:w-1/2 xl:w-1/2">
-        <h1 className="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
+        <h1 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8">
           Login
         </h1>
         <input

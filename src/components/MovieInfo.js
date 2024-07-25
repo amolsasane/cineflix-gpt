@@ -28,13 +28,13 @@ const MovieInfo = ({ title, overview, id }) => {
         </button>
       </Link>
       <button
-        className="bg-zinc-600 w-[5rem] sm:w-[5rem] md:w-[8rem] lg:w-32 p-1 md:p-2 lg:p-3 my-0 sm:my-2 md:my-2 lg:my-4 font-bold text-white rounded text-xs sm:text-md md:text-lg lg:text-lg bg-opacity-70"
+        className="bg-zinc-600 w-[5rem] sm:w-[5rem] md:w-[8rem] lg:w-[9rem] p-1 md:p-2 lg:p-3 my-0 sm:my-2 md:my-2 lg:my-4 font-bold text-white rounded text-xs sm:text-md md:text-lg lg:text-lg bg-opacity-70"
         onClick={handleScrollToMore}
       >
         See More
         <FontAwesomeIcon
           icon={faAngleDown}
-          className="pl-1 text-xs sm:text-md md:text-lg lg:text-xl"
+          className="pl-1 lg:pl-2 text-xs sm:text-md md:text-lg lg:text-xl"
         />
       </button>
     </div>

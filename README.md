@@ -30,6 +30,6 @@
 
 ---
 
-Check out the live project [CineflixGPT](https://cineflixgpt.netlify.app/).
+Check out the live project [CineflixGPT](https://cineflixgptmovies.netlify.app).
 
 CineflixGPT is still in development, and I would love your contributions and support!

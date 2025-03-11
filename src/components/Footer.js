@@ -97,7 +97,7 @@ const Footer = () => {
                   Portfolio
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/amolsasane/overlay/1729061869895/single-media-viewer/?profileId=ACoAAC5CvzcB1oXHxIlPZb02JT9UDziLWKqvFug"
+                  href="https://www.linkedin.com/in/amolsasane/overlay/1741262159384/single-media-viewer/?profileId=ACoAAC5CvzcB1oXHxIlPZb02JT9UDziLWKqvFug"
                   className="block mt-2 text-sm hover:text-white hover:underline"
                   target="_blank"
                   rel="noreferrer"

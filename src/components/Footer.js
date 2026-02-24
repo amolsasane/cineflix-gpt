@@ -164,12 +164,20 @@ const Footer = () => {
 
               <div>
                 <h3 className="text-white font-bold uppercase">Contact</h3>
-                <span className="block mt-2 text-sm hover:text-white">
-                  +917249498769
-                </span>
-                <span className="block mt-2 text-sm hover:text-white">
+
+                <a
+                  href="tel:+917249498769"
+                  className="block mt-2 text-sm hover:text-white"
+                >
+                  +91 7249498769
+                </a>
+
+                <a
+                  href="mailto:amolsasane001@gmail.com"
+                  className="block mt-2 text-sm hover:text-white"
+                >
                   amolsasane001@gmail.com
-                </span>
+                </a>
               </div>
             </div>
           </div>

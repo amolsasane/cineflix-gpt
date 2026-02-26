@@ -21,7 +21,7 @@ const GptSearch = () => {
   // eslint-disable-next-line no-undef
   const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   useEffect(() => {
     if (hasResults && resultsRef.current) {
@@ -39,7 +39,7 @@ const GptSearch = () => {
       "https://api.themoviedb.org/3/search/movie?query=" +
         movie +
         "&include_adult=false&language=en-US&page=1",
-      API_OPTIONS
+      API_OPTIONS,
     );
     const json = await data.json();
     const result = json.results;
@@ -65,7 +65,7 @@ const GptSearch = () => {
       const tmdbResult = await Promise.all(promiseArray);
 
       dispatch(
-        addGptMovies({ movieNames: gptResult, movieResults: tmdbResult })
+        addGptMovies({ movieNames: gptResult, movieResults: tmdbResult }),
       );
       setHasResults(true);
     } catch (error) {

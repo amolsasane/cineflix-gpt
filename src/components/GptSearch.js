@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addGptMovies, showError } from "../utils/gptSlice";
 import { API_OPTIONS, bgImage } from "../utils/constants";
 import Loader from "./Loader";
-import { GoogleGenerativeAI } from "@google/generative-ai"; // Use ES6 import
 
 const GptSearch = () => {
   const lang = useSelector((store) => store.lang.selectedLang);
@@ -17,11 +16,6 @@ const GptSearch = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [hasResults, setHasResults] = useState(false);
-
-  // eslint-disable-next-line no-undef
-  const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
-  const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   useEffect(() => {
     if (hasResults && resultsRef.current) {
@@ -56,9 +50,21 @@ const GptSearch = () => {
         ". Give 5 movies, comma separated like the example result given ahead. Example Result: 3 Idiots, Avenger, Hulk, Raabta, Kabir Singh";
 
       const prompt = promptQuery;
-      const result = await model.generateContent(prompt);
-      const response = result.response;
-      const text = response.text();
+      const result = await fetch("/.netlify/functions/gemini", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      const data = await result.json();
+
+      if (!result.ok) {
+        throw new Error(data.error || "Failed to generate Gemini response");
+      }
+
+      const text = data.text;
       const gptResult = text.split(",");
 
       const promiseArray = gptResult.map((movie) => getMoviesTMDB(movie));
